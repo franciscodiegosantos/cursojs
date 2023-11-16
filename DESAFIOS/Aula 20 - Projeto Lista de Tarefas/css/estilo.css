@@ -61,6 +61,7 @@ main{
     width: 100%;
     box-shadow: 0 0 20px #ccc;
     margin-bottom: 2%;
+    cursor: pointer;
 }
 
 .item.clicado{
@@ -97,7 +98,8 @@ main{
     border: none;
     padding: 10px;
     height: 80px;
-    width: 100%;    
+    width: 100%;  
+    cursor: pointer;  
 }
 
 .fa-circle-check{

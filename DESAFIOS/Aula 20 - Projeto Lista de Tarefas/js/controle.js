@@ -9,7 +9,6 @@ function addTarefa() {
 
     //SE NÃO FOR VAZIO, NEM NULO, NEM INDEFINIDO
     if((valorInput !== "") && (valorInput !== null) && (valorInput !== undefined)) {
-
         ++contador;
 
         let novoItem = `<div id="${contador}" class="item">
@@ -23,7 +22,7 @@ function addTarefa() {
        
         <div class="item-botao">
             <button onclick="deletar(${contador})" class="delete"> 
-                <i class="fa-solid fa-trash-can"> Deletar</i>
+                <i class="fa-solid fa-trash-can"></i>  Deletar
             </button>
         </div>
     </div>`;
@@ -38,22 +37,29 @@ function addTarefa() {
 }
 
 function deletar(id) {
-    var tareffa = document.getElementById(id);
-    tareffa.remove();
+    var tarefa = document.getElementById(id);
+    tarefa.remove();
 }
 
 function marcarTarefa(id) {
     var item = document.getElementById(id);
-    var classe = item.getAttribute('class');
+    var classe = item.getAttribute("class");
     console.log(classe);
 
     if (classe == "item") {
-        item.classList.add('clicado');
+        item.classList.add("clicado");
 
-        var icone = documente.getElementById('icone_' + id)
-        icone.classList.remove('fa-classic fa-circle');
-        icone.classList.add('fa-classic fa-circle-check');
+        var icone = documente.getElementById("icone_" + id);
+        icone.classList.remove("fa-circle");
+        icone.classList.add("fa-circle-check");
 
+        item.parentNode.appendChild(item);
+    } else {
+        item.classList.remove("clicado");
+
+        var icone = documente.getElementById("icone_" + id);
+        icone.classList.remove("fa-circle-check");
+        icone.classList.add("fa-circle");
     }
 }
 
