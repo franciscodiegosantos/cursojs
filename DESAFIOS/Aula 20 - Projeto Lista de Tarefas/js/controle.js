@@ -46,16 +46,16 @@ function marcarTarefa(id) {
     item.classList.add("clicado");
 
     var icone = document.getElementById("icone_" + id);
-    icone.classList.remove("circle");
-    icone.classList.add("circle-check");
+    icone.classList.remove("fa-classic fa-circle");
+    icone.classList.add("fa-solid fa-circle-check");
 
     item.parentNode.appendChild(item);
   } else {
     item.classList.remove("clicado");
 
     var icone = document.getElementById("icone_" + id);
-    icone.classList.remove("circle-check");
-    icone.classList.add("circle");
+    icone.classList.remove("fa-solid fa-circle-check");
+    icone.classList.add("fa-classic fa-circle");
   }
 }
 
